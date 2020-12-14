@@ -26,7 +26,7 @@ function onLucky(){
 	var lotto = [];
 	for(var i=1; i<=45; i++) numbers.push(i);
 	$(".result-wrap").empty();
-	number = Math.ceil(Math.random());
+	number = Math.ceil(Math.random()*44);
 	$(".result-wrap").append('<div class ="number'+numbers[number]+'"></div>');
 }
 

@@ -1,0 +1,13 @@
+.wrapper {max-width: 575px; margin: auto;}
+.wrapper .title {margin: 1em 0; border-bottom: 2px solid rgb(37, 58, 240); color: rgb(78, 95, 255); line-height: 1.5; text-align: center;}
+.wrapper .result-wrapper {display: flex; }
+.wrapper .result-wrapper .result-wrap {width: 80%; border: 2px solid rgb(37, 58, 240); border-radius: 0.5em; margin-right: 0.5em; padding: 1em; display: flex; justify-content: center;}
+.result-wrapper .number {width: 2em; height: 2em; font-size: 1.5em; color: #fff; text-align: center; border-radius: 50%; margin: 0 0.25em; line-height: 1.875em; text-shadow: 0 0 0.325em rgba(0, 0, 0, 0.7);}
+.result-wrapper .number.yellow {background-color: rgb(250, 253, 62); }
+.result-wrapper .number.blue {background-color: rgb(62, 59, 253); }
+.result-wrapper .number.green {background-color: rgb(93, 253, 53); }
+.result-wrapper .number.gray {background-color: rgb(70, 70, 70); }
+.result-wrapper .number.red {background-color: rgb(253, 44, 44); }
+.history-wrapper {padding: 1em 0; font-size: 0.875em;}
+.history-wrapper .history {width: 100%; border: 2px solid rgb(37, 58, 240); border-radius: 0.5em; padding: 1em; display: flex; justify-content: center; margin: 1em 0;}
+.history-wrapper {}

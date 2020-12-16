@@ -1,4 +1,5 @@
-[{
+[
+	{
 	"id": 1,
 	"link": "#",
 	"title": "MARC",
@@ -58,4 +59,5 @@
 	"salePrice": 0,
 	"origin": "",
 	"src": "../img/pic6.jpg"
-}]
+}
+]

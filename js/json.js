@@ -1,4 +1,5 @@
-[{
+var products = [
+	{
 		id: 1,
 		link: "#",
 		title: "MARK",

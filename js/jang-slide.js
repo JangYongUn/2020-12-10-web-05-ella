@@ -3,7 +3,7 @@
  */
 var container = '.jang-slide';
 var stageViewDefault = 4;	// 스테이지에 보여질 개수 기준값
-var moveCnt = 1; // 한번에 움직여 지는 수 
+var moveCnt = 1; // 한번에 움직여 지는 수 // ? 아직 미구연 
 var speed = 300;
 
 
@@ -45,27 +45,28 @@ function init() {
 	}
 }
 
-function slideAni(){
+/* function slideAni(){
 	$wrapper.stop().aminate({"left": direction * slideWid * moveCnt + "%"}, speed, init);
-}
-/* function slideAni() {
-	$wrapper.stop().animate({"left": target}, speed, init);
 } */
+function slideAni() {
+	$wrapper.stop().animate({"left": target}, speed, init);
+}
 
 
 
 /**
  *! 이벤트 콜백
  */
+    // 배너로 만들때 (var stageViewDefault = 1;	// 스테이지에 보여질 개수 기준값이 일때)
 function onResize() {
-	var wid = $(this).outerWidth();
+	var wid = $(this).outerWidth(); //브라우저의 width.
 	stageView = stageViewDefault;
 	if(wid < 576) stageView = 1;
-	else if(wid < 768) stageView = 2;
-	else if(wid < 992) stageView = 3;
-	else if(wid < 1200) stageView = 4;
-
+	else if(wid < 768) stageView = stageViewDefault < 2 ? stageViewDefault : 2;
+	else if(wid < 992) stageView = stageViewDefault < 3 ? stageViewDefault : 3;
+	else if(wid < 1200) stageView = stageViewDefault < 4 ? stageViewDefault : 4;
 	slideWid = 100 / stageView;
+	// console.log(stageView, slideWid);
 	init();
 }
 
@@ -82,19 +83,19 @@ function onResize() {
 	init();
 } */
 
-/* 배너로 만들때 (var stageViewDefault = 1;	// 스테이지에 보여질 개수 기준값이 일때)
+/* 
 	function onResize() {
 	var wid = $(this).outerWidth();
 	stageView = stageViewDefault;
 	if(wid < 576) stageView = 1;
-	else if(wid < 768) stageView = stageViewDefault < 2 ? stageViewDefault : 2;
-	else if(wid < 992) stageView = stageViewDefault < 3 ? stageViewDefault : 3;
-	else if(wid < 1200) stageView = stageViewDefault < 4 ? stageViewDefault : 4;
+	else if(wid < 768) stageView = 2;
+	else if(wid < 992) stageView = 3;
+	else if(wid < 1200) stageView = 4;
 
 	slideWid = 100 / stageView;
-	console.log(stageView, slideWid);
 	init();
-} */
+}
+ */
 
 
 function onPrev(){

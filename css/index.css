@@ -201,8 +201,8 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .brand-wrapper .brand-wrap .brand-product .brand img {transition: all 1s;}
 .brand-wrapper .brand-wrap .brand-product .brand:hover img {transform: scale(1.1);}
 .brand-wrapper .brand-wrap .brand-product .brand  {position: relative;}
-.brand-wrapper .brand-wrap .brand-product .brand .brand-title {position: absolute; top: 33em; left: 50%; transform: translateX(-50%); background-color: #fff; font-weight: bold; padding: 2.125em 5.5em; transition: all 0.3s;}
-.brand-wrapper .brand-wrap .brand-product .brand .brand-title:hover {background-color: darkblue; color: #fff;}
+.brand-wrapper .brand-wrap .brand-product .brand .bt-white {position: absolute; top: 33em; left: 50%; transform: translateX(-50%); background-color: #fff; font-weight: bold; padding: 2.125em 5.5em; transition: all 0.3s;}
+.brand-wrapper .brand-wrap .brand-product .brand .bt-white:hover {background-color: darkblue; color: #fff;}
 
 
 

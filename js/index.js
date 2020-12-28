@@ -4,6 +4,35 @@ var scTop, topHeight, logoHeight, winWidth, navi = [];
 
 
 /********* 사용자함수 **********/
+function renderPrd() {
+	$('.prd').each(function(i){
+		var discount = $(this).data('discount');
+		var icon = $(this).data('icon');
+		if(discount) {
+			$(this).find('.icon-wrap').append('<div class="discount">'+discount+'</div>');
+		}
+		if(icon && icon.length > 0) {
+			for(var i=0, html=''; i<icon.length; i++) {
+				html += '<div class="icon" style="background-color: '+icon[i].bg+';">'+icon[i].title+'</div>';
+			}
+			$(this).find('.icon-wrap').append(html);
+		}
+	});
+}
+
+function chgImg(el, src) {
+	$(el).parents('.prd').find('.img-front').attr('src', src);
+	$(el).parent().addClass('active').siblings().removeClass('active');
+}
+
+function renderStar() {
+	$(".star").each(function(i){
+		var score = Number($(this).data('score'));
+		if(score > 0) $(this).find("i").addClass("active");
+		$(this).find(".mask").css("left", score * 20 + "%");
+	});
+}
+
 function mainBanner() {
 	var swiper = new Swiper('.main-wrapper.swiper-container', {
 		loop: true,
@@ -197,6 +226,8 @@ $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 
+renderStar();
+renderPrd();
 
 
 /********* 이벤트콜백 **********/
@@ -344,7 +375,7 @@ function onNewProducts(r) {
 		html += '<div class="content-wrap">';
 		html += '<h4 class="title">'+r[i].title+'</h4>';
 		html += '<p class="summary">'+r[i].summary+'</p>';
-		html += '<div class="star">';
+		html += '<div class="star" data-score="'+r[i].star+'">';
 		for(var j=0; j<5; j++) html += '<i class="fa fa-star"></i>';
 		if(Number(r[i].star) > 0) html += '<div class="mask"></div>';
 		html += '</div>';
@@ -357,8 +388,7 @@ function onNewProducts(r) {
 		html += '</div>';
 		html += '</div>';
 		$slide = $(html).appendTo(".navi-new .swiper-wrapper");
-		if(Number(r[i].star) > 0) $slide.find(".star > i").addClass("active");
-		$slide.find(".mask").css("left", r[i].star * 20 + "%");
+		renderStar();
 	}
 	var swiper = new Swiper('#newSlide .swiper-container', {
 		slidesPerView: 4,
